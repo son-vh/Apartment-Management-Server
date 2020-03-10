@@ -1,0 +1,327 @@
+{
+	"info": {
+		"_postman_id": "55b2c844-7848-4b56-b22e-0bb4c9e0fe5f",
+		"name": "ManageApartment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "select_equipment",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{host}}/Resident",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"Resident"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete_equipment",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{host}}/odata/Equipment/2",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"odata",
+						"Equipment",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add_equipment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n            \"Id\":\"1\",\r\n            \"Name\": \"day nek\",\r\n            \"PurchaseDate\": \"2020-01-01\",\r\n            \"ExpirationDate\": \"2020-01-01\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{protocol}}://{{host}}/odata/Equipment",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"odata",
+						"Equipment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update_equipment",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n            \"Id\": 1,\r\n            \"Name\": \"Noi nuoc nong\",\r\n            \"PurchaseDate\": \"2020-01-01\",\r\n            \"ExpirationDate\": \"2020-01-01\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{protocol}}://{{host}}/odata/Equipment/1",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"odata",
+						"Equipment",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "upload_file",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "",
+							"type": "file",
+							"src": "/C:/Users/VO HONG SON/Desktop/bk.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{protocol}}://{{host}}/api/FileUploading/UploadFile",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"FileUploading",
+						"UploadFile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "select_resident",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{host}}/Resident",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"Resident"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_equipment_by_resident",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{host}}/GetEquipmentByResident(Id=3)",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"GetEquipmentByResident(Id=3)"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "firebase",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"warning": "Value contains invalid newline characters.",
+						"key": "Authorization",
+						"value": "key=AIzaSyDgc8LAfzSgDl9W3XApkInoltAByltPjJE",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"to\" : \"dxTZQjpyxdQ:APA91bG6LTiBq_q5IlQEtso6TJjpTMhg7N-KtfzqWxH79-iyckzmC1bVfVzDzeScFVqZdpUAruGwkt4zDUgGmunStxMuaDhipOQ5kCvUKX7s4R5P2qDUdGrjLvIEHAM2TErT_ZrljWiu\",\r\n \"data\" : {\r\n     \"body\" : \"99999\",\r\n     \"title\": \"11111\"\r\n }\r\n}"
+				},
+				"url": {
+					"raw": "https://fcm.googleapis.com/fcm/send",
+					"protocol": "https",
+					"host": [
+						"fcm",
+						"googleapis",
+						"com"
+					],
+					"path": [
+						"fcm",
+						"send"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "confirmation",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"body\": \"hkh\",\n\t\"title\": \"tao la tao\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{protocol}}://{{host}}/api/Confirmation",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"Confirmation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "job_info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{host}}/JobInfo",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"JobInfo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_support",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}://{{host}}/Support",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"Support"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add_support",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n            \"SupportType\": \"cai dat\",\r\n            \"SupportDate\": \"2020-01-01\",\r\n            \"SupportImage\": \"http://192.168.1.118:45457/Static/Equipment/washing_machine.png\",\r\n            \"ResidentId\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{protocol}}://{{host}}/Support",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"Support"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
